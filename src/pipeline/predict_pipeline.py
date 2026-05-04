@@ -59,6 +59,9 @@ class PredictPipeline:
             preprocessor = load_object(file_path=self.preprocessor_path)
 
             transformed_features = preprocessor.transform(features)
+            if hasattr(transformed_features, "toarray"):
+                transformed_features = transformed_features.toarray()
+
             predictions = model.predict(transformed_features)
 
             logging.info("Prediction completed successfully.")

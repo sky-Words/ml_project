@@ -20,7 +20,7 @@ class TrainPipeline:
 
             transformation = DataTransformation()
             train_array, test_array, _ = transformation.initiate_data_transformation(
-                train_data_path=train_data_path,
+                train_path=train_data_path,
                 test_path=test_data_path,
             )
 
